@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "josina-fca": {
+    "fca": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -43,7 +43,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/josina-fca",
+            "outputPath": "dist/fca",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -92,18 +92,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "josina-fca:build"
+            "browserTarget": "fca:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "josina-fca:build:production"
+              "browserTarget": "fca:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "josina-fca:build"
+            "browserTarget": "fca:build"
           }
         },
         "test": {
@@ -140,16 +140,20 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "josina-fca:serve"
+            "devServerTarget": "fca:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "josina-fca:serve:production"
+              "devServerTarget": "fca:serve:production"
             }
           }
+        },
+        "deploy": {
+          "builder": "angular-cli-ghpages:deploy",
+          "options": {}
         }
       }
     }
   },
-  "defaultProject": "josina-fca"
+  "defaultProject": "fca"
 }
