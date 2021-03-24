@@ -1,1 +1,112 @@
-/* You can add global styles to this file, and also import other style files */
+@font-face {
+  font-family: "OpenSans";
+  font-weight: 400;
+  font-style: normal;
+  src: url(styles/font/OpenSans/OpenSans-Regular.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: "OpenSans";
+  font-weight: 400;
+  font-style: italic;
+  src: url(styles/font/OpenSans/OpenSans-Italic.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: "OpenSans";
+  font-weight: 700;
+  font-style: normal;
+  src: url(styles/font/OpenSans/OpenSans-Bold.ttf) format('truetype');
+}
+
+body {
+  font-family: 'OpenSans';
+  margin: 0;
+}
+
+h1 {
+  background-color: #007299;
+  color: white;
+  margin-top: 0;
+  padding: 10px;
+}
+
+h2 {
+  position: relative;
+  margin-top: 0;
+  color: #007299;
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    height: 5px;
+    width: 50%;
+    background-color: #007299;
+  }
+}
+
+.icon-container {
+  display: flex;
+  padding: 0 20px;
+  flex-direction: row;
+}
+
+.icon-demo, .icon-color-picker {
+  width: 500px;
+}
+
+.icon-color-picker-list {
+  display: flex;
+  flex-direction: row;
+}
+
+.icon-board {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  margin: 40px 0;
+  > * + * {
+    margin-left: 20px;
+  }
+}
+
+.icon-entry {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 60px;
+}
+
+.icon-label {
+  margin-top: 20px;
+  padding: 2px 5px;
+  border-radius: 2px;
+  font-weight: bold;
+  background-color: #C4C2C2;
+  color: #FFFFFF;
+  font-size: 14px;
+}
+
+.icon-color-picker-entry {
+  position: relative;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+  border: 1px solid #FFFFFF;
+}
+
+.icon-color-selected {
+  border-color: #000000;
+  &::after {
+    content: '';
+    position: absolute;
+    z-index: 100;
+    left: calc(100% - 8px);
+    top: -7px;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-right: 10px solid #FFFFFF;
+    transform: rotate(135deg);
+  }
+}
